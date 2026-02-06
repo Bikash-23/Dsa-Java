@@ -1,5 +1,5 @@
-import java.util.*;
-import java.lang.*;
+// import java.util.*;
+// import java.lang.*;
 
 // ---------boilerplate code--------------------
 // public class Basic01{
@@ -14,7 +14,7 @@ public class Basic01{
         // System.out.println("Hello World!"); 
         // int a = 10,b= 20;
         // System.out.println(a+b);
-        Scanner sc=  new Scanner(System.in);
+        // Scanner sc=  new Scanner(System.in);
 
         // int a,b;
         // System.out.print("Enter Number:");
