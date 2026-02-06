@@ -1,8 +1,8 @@
-// import java.util.Scanner;
+import java.util.Scanner;
 
 public class loop{
     public static void main(String[] args) {
-        // Scanner sc= new Scanner(System.in);
+        Scanner sc= new Scanner(System.in);
         // int n,i=1;
         // n = sc.nextInt();
         // while(i<=n){
@@ -91,5 +91,6 @@ public class loop{
         // }else{
         //     System.out.println("Not Prime");
         // }
+        sc.close();
     }
 }

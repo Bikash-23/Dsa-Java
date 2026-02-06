@@ -1,4 +1,4 @@
-// import java.util.*;
+import java.util.*;
 // import java.lang.*;
 
 // ---------boilerplate code--------------------
@@ -14,7 +14,7 @@ public class Basic01{
         // System.out.println("Hello World!"); 
         // int a = 10,b= 20;
         // System.out.println(a+b);
-        // Scanner sc=  new Scanner(System.in);
+        Scanner sc=  new Scanner(System.in);
 
         // int a,b;
         // System.out.print("Enter Number:");
@@ -58,7 +58,7 @@ public class Basic01{
         b = (byte)(b*2);
         System.out.println(b);
         
-       
+      sc.close(); 
     }
 }
 

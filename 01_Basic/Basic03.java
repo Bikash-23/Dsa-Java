@@ -80,6 +80,6 @@ public class Basic03 {
             break;
             default: System.out.println("Dream Break!");
         }
-        
+       sc.close(); 
     }
 }
