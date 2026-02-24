@@ -1,4 +1,4 @@
-public class Demo02 {
+public class DemoB {
     public static int binToDec(int binNum){
         int decNum = 0;
         int power = 0;

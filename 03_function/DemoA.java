@@ -1,4 +1,4 @@
-public class Demo01 {
+public class DemoA {
         static boolean isPrime(int n){
             if(n< 2)
                 return false;
