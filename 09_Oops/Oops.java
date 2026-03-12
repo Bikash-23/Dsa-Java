@@ -9,9 +9,18 @@ public class Oops {
         Student s1= new Student("Ravi");
         s1.name = "Bikash";
         s1.roll = 67;
+        s1.marks[0] = 100;
+        s1.marks[1] = 90;
+        s1.marks[2]= 70;
         System.out.println(s1.name + s1.roll);
+
         Student s2 = new Student(s1);
         System.out.println(s2.name);
+        s1.marks[2] = 80;
+        for(int i = 0; i<3;i++){
+            System.out.println(s2.marks[i]);
+        }
+      
     }
 }
 
@@ -36,6 +45,7 @@ class BankAcount {
 class Student{
     String name;
     int roll;
+    int marks[];
     //non-parametarized
     // Student(){
     //     System.out.println("constructor is called...");
@@ -44,11 +54,30 @@ class Student{
     //parametarized
     Student(String name){
         this.name = name;
+        this.marks = new int[3];
         System.out.println(name);
     }
-    //copy constructor
-    Student(Student s1){
+    //copy constructor :: 
+    //  shallow copy constructor
+    //   Deep copy constructor
+
+    // //  shallow copy constructor
+    // Student(Student s1){
+    //     this.name = s1.name;
+    //     this.roll = s1.roll;
+    //     marks = new int[3];
+    //     this.marks = s1.marks;
+    // }
+
+    //   Deep copy constructor(best Use of Copy Constuctor )
+    Student(Student s1) {
         this.name = s1.name;
         this.roll = s1.roll;
+        this.marks = new int[3];
+        for (int i = 0; i < 3; i++) {
+            this.marks[i] = s1.marks[i];
+        }
     }
+
+
 }
