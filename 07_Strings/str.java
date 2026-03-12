@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class A {
+public class str {
     public static boolean isPalindrome(String s){
         for(int i = 0;i<s.length();i++){
             if(s.charAt(i) != s.charAt(s.length()-1-i)){
