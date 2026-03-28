@@ -86,10 +86,47 @@ public class Sort {
         return i;
     }
 
+    // Q. search in rotated Sorted Array
+    // input: sorted,rotated array with distinct numbers(in ascending Order)
+    // it is rotated at a pivot point. Find the index of given element.
+    public static int search(int arr[], int target, int si, int ei) {
+        if (si > ei) {
+            return -1;
+        }
+        int mid = si + (ei - si) / 2;
+        if (arr[mid] == target) {
+            return mid;
+        }
+        // mid on L1
+        if (arr[si] <= arr[mid]) {
+            // case a: left of L1
+            if (arr[si] <= target && target <= arr[mid]) {
+                return search(arr, target, si, mid - 1);
+            } else {
+                // case b:rigth of L1
+                return search(arr, target, mid + 1, ei);
+            }
+        // mid on L2
+        } else {
+            // case c: right of L2
+            if (arr[mid] <= target && target <= arr[ei]) {
+                return search(arr, target, mid + 1, ei);
+            } else {
+                // case d: left of L2
+                return search(arr, target, si, mid - 1);
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        int arr[] = { 6, 3, 9, 5, 2, 8 };
-        // mergeSort(arr, 0, arr.length - 1);
-        quickSort(arr, 0, arr.length - 1);
-        printArr(arr);
+        // int arr[] = { 6, 3, 9, 5, 2, 8 };
+        // // mergeSort(arr, 0, arr.length - 1);
+        // quickSort(arr, 0, arr.length - 1);
+        // printArr(arr);
+
+        int arr2[] = { 4, 5, 6, 7, 0, 1, 2 };
+        int target = 0;// output = 4 (Idx)
+        int res = search(arr2, target, 0, arr2.length-1);
+        System.out.println(res);
     }
 }
