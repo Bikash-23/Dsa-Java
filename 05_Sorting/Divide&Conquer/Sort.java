@@ -118,15 +118,43 @@ public class Sort {
         }
     }
 
+    public static int majorityElement(int arr[]) {
+        int count = 0;
+        int el = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (count == 0) {
+                count = 1;
+                el = arr[i];
+            } else if (arr[i] == el) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        int count1 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == el) {
+                count1++;
+            }
+        }
+        if (count1 > arr.length / 2) {
+            return el;
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         // int arr[] = { 6, 3, 9, 5, 2, 8 };
         // // mergeSort(arr, 0, arr.length - 1);
         // quickSort(arr, 0, arr.length - 1);
         // printArr(arr);
 
-        int arr2[] = { 4, 5, 6, 7, 0, 1, 2 };
-        int target = 0;// output = 4 (Idx)
-        int res = search(arr2, target, 0, arr2.length-1);
-        System.out.println(res);
+        // int arr2[] = { 4, 5, 6, 7, 0, 1, 2 };
+        // int target = 0;// output = 4 (Idx)
+        // int res = search(arr2, target, 0, arr2.length-1);
+        // System.out.println(res);
+
+        int arr3[] = { 2, 2, 2, 3, 3, 1, 2, 3, 2 };
+        System.out.println(majorityElement(arr3));
     }
 }
